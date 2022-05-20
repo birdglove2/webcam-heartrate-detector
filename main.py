@@ -10,7 +10,6 @@ from helper import (
     FPS,
     calculate_mean_from_roi,
     detect_face,
-    calculate_hr2,
     extract_roi,
     calculate_hr,
     moving_avg,

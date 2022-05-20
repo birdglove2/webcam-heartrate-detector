@@ -7,9 +7,11 @@ import random
 # =============== Config ===============
 
 USE_HSV = True
-USE_WEBCAM = True
-USE_CHEEK = False
+USE_WEBCAM = False
+USE_CHEEK = True
 VIDEO_FILENAME = "video/test.mp4"
+FPS = 30
+DURATION = 10
 
 # =============== Global vars ===============
 
@@ -17,15 +19,13 @@ FOREHEAD_POINTS = [67, 109, 10, 338, 297, 299, 296, 336, 9, 107, 66, 69]
 CHEEK1_POINTS = [329, 348, 347, 280, 411, 427, 436, 426, 266, 329, 348]
 CHEEK2_POINTS = [100, 119, 118, 50, 187, 207, 216, 206, 36]
 
-FPS = 30
-DURATION = 10
+
 WINDOW_SIZE = FPS * DURATION
 
 MIN_HR_BPM, MAX_HR_BMP = 48, 144
 
 FREQS = fftfreq(WINDOW_SIZE, 1 / FPS)
 
-print("FREQ", FREQS * 60, len(FREQS))
 INVALID_IDX = np.where((FREQS < 50) | (FREQS > 180))
 
 # =============== =============== ===============
